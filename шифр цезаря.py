@@ -53,7 +53,7 @@ def cezar(f,l, c, n ):
             for i in f:
                 if i in rus_lower_alphabet:
                     rez += rus_lower_alphabet[(rus_lower_alphabet.index(i) - n) % len(rus_lower_alphabet)]
-                elif i in eng_upper_alphabet:
+                elif i in rus_upper_alphabet:
                     rez += rus_upper_alphabet[(rus_upper_alphabet.index(i) - n) % len(rus_upper_alphabet)]
                 else:
                     rez += i
