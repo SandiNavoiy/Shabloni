@@ -1,3 +1,5 @@
+import time
+
 a = 15
 b = 121050
 
@@ -15,5 +17,7 @@ def get_nod(a,b):
 
 #вывод НОД
     return a
-
+start = time.time()
 print(get_nod(a,b))
+end = time.time()
+print(end - start)
