@@ -7,14 +7,20 @@ def decor_time(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
         time_start = time.time()
-        f  = func(*args, **kwargs)
+        f = func(*args, **kwargs)
         time_end = time.time()
-        print(f"Время выполнения функции составило {round(time_end -time_start, 10)} секунд")
+        print(
+            f"Время выполнения функции составило {round(time_end -time_start, 10)} секунд"
+        )
 
         return f
+
     return wrapper
+
+
 #
 colichestvo = 5
+
 
 @decor_time
 def boloto(n):
@@ -30,6 +36,7 @@ def boloto(n):
             if l[i] > l[i + 1]:
                 return False
         return True
+
     # перемешиваем список до тех пор, пока он не станет упорядоченным по возрастанию
     while True:
         if prov(lst):
@@ -41,5 +48,3 @@ def boloto(n):
 
 
 print(boloto(colichestvo))
-
-
