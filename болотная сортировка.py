@@ -1,10 +1,22 @@
 import random
 import time
+from functools import wraps
 
+
+def decor_time(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        time_start = time.time()
+        f  = func(*args, **kwargs)
+        time_end = time.time()
+        print(f"Время выполнения функции составило {round(time_end -time_start, 10)} секунд")
+
+        return f
+    return wrapper
 #
-colichestvo = 10
+colichestvo = 5
 
-
+@decor_time
 def boloto(n):
     """Болотная сортировка, просто прикол"""
     lst = []
@@ -27,8 +39,7 @@ def boloto(n):
 
     return lst
 
-t1 = time.time()
-print(boloto(colichestvo))
-t2 = time.time()
 
-print(f'{t2 - t1} секунд')
+print(boloto(colichestvo))
+
+
